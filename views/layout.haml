@@ -1,33 +1,18 @@
 !!!
 %html(lang="en" )
   %head
-    %title Focus-What are ThoughtWorkers focusing on now
+    %title Note
+    %meta(charset="utf-8")
     %meta(name="viewport" content="width=device-width, initial-scale=1.0" )
     %link(href="/bootstrap/css/bootstrap.css" rel="stylesheet" )
     %link(href="/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" )
-    %link(href="/focus.css" rel="stylesheet" )
+    %link(href="/note.css" rel="stylesheet" )
     %link(href="/favicon.ico" rel="shortcut icon" type="image/x-icon" )
   %body
-    %div(class="navbar navbar-inverse navbar-fixed-top" )
-      %div(class="navbar-inner" )
-        %div(class="container" )
-          %button(class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" )
-            %span(class="icon-bar")
-            %span(class="icon-bar")
-            %span(class="icon-bar")
-          %a(class="brand" href="http://www.thoughtworks.com" )ThoughtWorks
-          %div(class="nav-collapse collapse")
-            %ul(class="nav")
-              %li(class="active")
-                %a(href="#news" )News
-              %li
-                %a(href="#topic" )Topic
-              %li
-                %a(href="#commit" )Commit
-            %form(class="navbar-form pull-right")
-              %input(class="span2" type="text" placeholder="Email")
-              %input(class="span2" type="password" placeholder="Password")
-              %button(type="submit" class="btn")Login/Register
-    %div(class="container" )
-      %div(class="row" )
+    %div(id="wrap")
+      %div(class="container" )
         =yield
+
+    %div(id="footer" )
+      %div(class="container" )
+        %p(class="muted credit" ) Example for Sinatra,Power by @xianlinbox

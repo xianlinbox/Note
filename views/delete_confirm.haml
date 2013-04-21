@@ -1,0 +1,5 @@
+%form(method="post" action="/note/#{@note.id}" )
+  %h3 Are you sure you want to delete this Note  #{@note.id}
+  %input(type="hidden" name="_method" value="delete" )
+  %input(type="submit" class="btn btn-primary" )
+  %a(href="/" ) Cancel

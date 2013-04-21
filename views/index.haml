@@ -1,15 +1,30 @@
-%table(class="table table-condensed" )
-  %tbody
-    %tr
-      %td 1
-      %td
-        %a(onclick="#" )
-          %i(class="icon-thumbs-up" )
-      %td This is a style test subject
-    %tr
-      %td
-      %td
-      %td submmited by xianlinbox 1 hours ago
-    %tr
-
-
+%div(class="row")
+  %h3(class="text-center" ) Welcome to Note System
+  %div(class="row" )
+    %form(class="text-center" method="post" action="/" )
+      %textarea(name="content" rows="3" )
+      %button(class="btn btn-large" type="submit" ) Add Note!
+  %hr(class="bs-docs-separator" )
+  - unless @notes.empty?
+    %div(class="row")
+      %table(class="table table-hover" )
+        %thead
+          %tr
+            %th ID
+            %th Content
+            %th Create Date
+            %th Complete Date
+            %th Operation
+        %tbody
+          - @notes.each do |note|
+            %tr
+              %td #{note.id}
+              %td #{note.content}
+              %td #{note.create_at}
+              %td #{note.completed_at}
+              %td
+                %a(href="/note/#{note.id}" )
+                  %i(class="icon-edit" )
+                &nbsp
+                %a(href="/note/#{note.id}/delete" )
+                  %i(class="icon-remove-sign")

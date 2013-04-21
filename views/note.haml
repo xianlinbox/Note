@@ -1,0 +1,12 @@
+%form(method="post" action="/note/#{@note.id}" )
+  %input(type="hidden" name="_method" value="put" )
+  %label ID
+  %input(name="id" value="#{@note.id}" type="text")
+  %label Content
+  %textarea(name="content" rows="3" ) #{@note.content}
+  %label Create Date
+  %input(name="create_at" value="#{@note.create_at}"  type="text")
+  %label Completed Date
+  %input(name="completed_at" value="#{@note.completed_at}" type="text" )
+  %hr(class="bs-docs-separator" )
+  %button(type="submit" class="btn btn-primary" )Update
