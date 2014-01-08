@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'data_mapper'
+require 'haml'
 require File.dirname(__FILE__)+'/domain/note'
 
 get '/' do
